@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="odiazS7.Views.vInsertar"
+             Title="vInsertar">
+    <VerticalStackLayout>
+        <Label 
+            Text="Insertar Estudiantes!"
+            TextColor="Blue"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Entry x:Name="txtNombre"
+               Placeholder="Ingrese el nombre"></Entry>
+        <Entry x:Name="txtApellido"
+               Placeholder="Ingrese el apellido"></Entry>
+        <Entry x:Name="txtEdad"
+        Placeholder="Ingrese el la edad"
+               MaxLength="2"
+               Keyboard="Numeric"></Entry>
+        <Button x:Name="btnGuardar" Text="Guardar"
+                Clicked="btnGuardar_Clicked"></Button>               
+    </VerticalStackLayout>
+</ContentPage>

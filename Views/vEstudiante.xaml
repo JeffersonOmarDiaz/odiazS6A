@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="odiazS7.Views.vEstudiante"
+             Title="vEstudiante">
+    <VerticalStackLayout>
+        <Label 
+            Text="Semana 6 servicios web!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <ListView x:Name="lvEstudiantes" ItemSelected="lvEstudiantes_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label x:Name="lblNombre"
+                                   Text="{Binding nombre}"></Label>
+                            <Label x:Name="lblapellido" 
+                                   Text="{Binding apellido}"></Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="btnIsertar" Text="Insertar"
+                Clicked="btnIsertar_Clicked"></Button>
+    </VerticalStackLayout>
+</ContentPage>

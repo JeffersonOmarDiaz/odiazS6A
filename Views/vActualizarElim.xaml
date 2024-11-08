@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="odiazS7.Views.vActualizarElim"
+             Title="vActualizarElim">
+    <VerticalStackLayout>
+        <Label 
+            Text="ACTUALIZAR  -  ELIMINAR ESTUDIANTES"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Entry x:Name="txtCodigo"
+               IsReadOnly="True"/>
+        <Entry x:Name="txtNombre"
+               Placeholder="Ingrese el nombre"/>
+        <Entry x:Name="txtApellido"
+               Placeholder="Ingrese el apellido"/>
+        <Entry x:Name="txtEdad"
+               Placeholder="Ingrese la edad"
+               Keyboard="Numeric"/>
+
+        <Button x:Name="btnActualizar"
+                Text="actualizar"
+                Clicked="btnActualizar_Clicked"></Button>
+        <Button x:Name="btnEliminar"
+                Text="Eliminar"
+                Clicked="btnEliminar_Clicked"></Button>
+        
+    </VerticalStackLayout>
+</ContentPage>
