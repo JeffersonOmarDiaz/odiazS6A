@@ -18,7 +18,7 @@ public partial class vInsertar : ContentPage
 			parametros.Add("nombre", txtNombre.Text);
 			parametros.Add("apellido", txtApellido.Text);
 			parametros.Add("edad", txtEdad.Text);
-			client.UploadValues("http://192.168.17.52/uisraelws/estudiante.php", "POST", parametros);
+			client.UploadValues("http://192.168.3.108/uisraelws/estudiante.php", "POST", parametros);
 			Navigation.PushAsync(new vEstudiante());
 		}
 		catch (Exception ex)

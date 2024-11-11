@@ -9,22 +9,55 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-        <Entry x:Name="txtCodigo"
-               IsReadOnly="True"/>
-        <Entry x:Name="txtNombre"
-               Placeholder="Ingrese el nombre"/>
-        <Entry x:Name="txtApellido"
-               Placeholder="Ingrese el apellido"/>
-        <Entry x:Name="txtEdad"
-               Placeholder="Ingrese la edad"
-               Keyboard="Numeric"/>
+        <StackLayout Padding="20" Spacing="10">
+            <!-- Código (solo lectura) -->
+            <Entry x:Name="txtCodigo"
+           IsReadOnly="True"
+           Placeholder="Código"
+           BackgroundColor="#f5f5f5"
+           TextColor="Gray"/>
 
-        <Button x:Name="btnActualizar"
-                Text="actualizar"
-                Clicked="btnActualizar_Clicked"></Button>
-        <Button x:Name="btnEliminar"
-                Text="Eliminar"
-                Clicked="btnEliminar_Clicked"></Button>
-        
+            <!-- Nombre -->
+            <Entry x:Name="txtNombre"
+           Placeholder="Ingrese el nombre"
+           BackgroundColor="#e6f7ff"
+           PlaceholderColor="Gray"
+           TextColor="Black"/>
+
+            <!-- Apellido -->
+            <Entry x:Name="txtApellido"
+           Placeholder="Ingrese el apellido"
+           BackgroundColor="#e6f7ff"
+           PlaceholderColor="Gray"
+           TextColor="Black"/>
+
+            <!-- Edad (solo números) -->
+            <Entry x:Name="txtEdad"
+           Placeholder="Ingrese la edad"
+           Keyboard="Numeric"
+           BackgroundColor="#e6f7ff"
+           PlaceholderColor="Gray"
+           TextColor="Black"/>
+
+            <!-- Botones -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
+                <Button x:Name="btnActualizar"
+                        Text="Actualizar"
+                        Clicked="btnActualizar_Clicked"
+                        BackgroundColor="#3498db"
+                        TextColor="White"
+                        CornerRadius="10"
+                        WidthRequest="120"/>
+                <Button x:Name="btnEliminar"
+                        Text="Eliminar"
+                        Clicked="btnEliminar_Clicked"
+                        BackgroundColor="#e74c3c"
+                        TextColor="White"
+                        CornerRadius="10"
+                        WidthRequest="120"/>
+            </StackLayout>
+        </StackLayout>
+
+
     </VerticalStackLayout>
 </ContentPage>

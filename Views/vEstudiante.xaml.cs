@@ -6,7 +6,7 @@ namespace odiazS7.Views;
 
 public partial class vEstudiante : ContentPage
 {
-	private const string Url = "http://192.168.17.52/uisraelws/estudiante.php";
+	private const string Url = "http://192.168.3.108/uisraelws/estudiante.php";
 	private readonly HttpClient cliente = new HttpClient();
 	private ObservableCollection<Estudiante> estud;
 
@@ -21,7 +21,8 @@ public partial class vEstudiante : ContentPage
 		var content = await cliente.GetStringAsync(Url);
 		List<Estudiante> mostrarEst = JsonConvert.DeserializeObject<List<Estudiante>>(content);
 		estud = new ObservableCollection<Estudiante>(mostrarEst);
-        lvEstudiantes.ItemsSource = estud;
+        //lvEstudiantes.ItemsSource = estud;
+        gvEstudiantes.ItemsSource = estud;
 
     }
 
@@ -34,5 +35,18 @@ public partial class vEstudiante : ContentPage
     {
 		var objEstudiante = (Estudiante)e.SelectedItem;
 		Navigation.PushAsync(new vActualizarElim(objEstudiante));
+    }
+
+    private void gvEstudiantes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        //var objEstudiante = (Estudiante)e.CurrentSelection;
+        var estudianteSeleccionado = e.CurrentSelection.FirstOrDefault() as Estudiante;
+        if (estudianteSeleccionado != null)
+        {
+            Navigation.PushAsync(new vActualizarElim(estudianteSeleccionado));
+        }
+
+    // Limpiar la selección después de manejarla
+    ((CollectionView)sender).SelectedItem = null;
     }
 }

@@ -10,15 +10,41 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-        <Entry x:Name="txtNombre"
-               Placeholder="Ingrese el nombre"></Entry>
-        <Entry x:Name="txtApellido"
-               Placeholder="Ingrese el apellido"></Entry>
-        <Entry x:Name="txtEdad"
-        Placeholder="Ingrese el la edad"
-               MaxLength="2"
-               Keyboard="Numeric"></Entry>
-        <Button x:Name="btnGuardar" Text="Guardar"
-                Clicked="btnGuardar_Clicked"></Button>               
+        <StackLayout Padding="20" Spacing="15">
+            <!-- Nombre -->
+            <Entry x:Name="txtNombre"
+           Placeholder="Ingrese el nombre"
+           BackgroundColor="#e6f7ff"
+           PlaceholderColor="Gray"
+           TextColor="Black"
+           Margin="0,10,0,0"/>
+
+            <!-- Apellido -->
+            <Entry x:Name="txtApellido"
+           Placeholder="Ingrese el apellido"
+           BackgroundColor="#e6f7ff"
+           PlaceholderColor="Gray"
+           TextColor="Black"/>
+
+            <!-- Edad (solo números y máx. 2 caracteres) -->
+            <Entry x:Name="txtEdad"
+           Placeholder="Ingrese la edad"
+           Keyboard="Numeric"
+           MaxLength="2"
+           BackgroundColor="#e6f7ff"
+           PlaceholderColor="Gray"
+           TextColor="Black"/>
+
+            <!-- Botón de Guardar -->
+            <Button x:Name="btnGuardar"
+            Text="Guardar"
+            Clicked="btnGuardar_Clicked"
+            BackgroundColor="#2ecc71"
+            TextColor="White"
+            CornerRadius="10"
+            WidthRequest="150"
+            HorizontalOptions="Center"/>
+        </StackLayout>
+
     </VerticalStackLayout>
 </ContentPage>

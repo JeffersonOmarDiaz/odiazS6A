@@ -9,7 +9,32 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-        <ListView x:Name="lvEstudiantes" ItemSelected="lvEstudiantes_ItemSelected">
+        <VerticalStackLayout>
+            <!-- Encabezados de la tabla -->
+            <Grid ColumnDefinitions="*, *, *, *" Padding="10">
+                <Label Text="Código" FontAttributes="Bold" Grid.Column="0"  />
+                <Label Text="Nombre" FontAttributes="Bold" Grid.Column="1" />
+                <Label Text="Apellido" FontAttributes="Bold" Grid.Column="2" />
+                <Label Text="Edad" FontAttributes="Bold" Grid.Column="3" />
+            </Grid>
+
+            <!-- Datos dinámicos con CollectionView -->
+            <CollectionView x:Name="gvEstudiantes" SelectionMode="Single" SelectionChanged="gvEstudiantes_SelectionChanged">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="*, *, *, *" Padding="10">
+                            <Label Text="{Binding codigo}" Grid.Column="0"  />
+                            <Label Text="{Binding nombre}" Grid.Column="1"  />
+                            <Label Text="{Binding apellido}" Grid.Column="2" />
+                            <Label Text="{Binding edad}" Grid.Column="3" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+
+
+        <!--<ListView x:Name="lvEstudiantes" ItemSelected="lvEstudiantes_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -22,8 +47,15 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
+        </ListView>-->
         <Button x:Name="btnIsertar" Text="Insertar"
-                Clicked="btnIsertar_Clicked"></Button>
+                Clicked="btnIsertar_Clicked"
+                WidthRequest="100"
+                HeightRequest="40"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                BackgroundColor="#3498db"
+                TextColor="White"
+                CornerRadius="10"></Button>
     </VerticalStackLayout>
 </ContentPage>
